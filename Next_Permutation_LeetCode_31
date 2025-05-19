@@ -1,0 +1,35 @@
+class Solution {
+    public void nextPermutation(int[] nums) {
+        int n = nums.length;
+        int lowIndex = -1;
+
+        for(int index = n-2; index >=0; index--){
+          if(nums[index] < nums[index + 1]){
+            lowIndex = index;
+            break;
+          }
+        }
+        if(lowIndex == -1){
+          reverseArray(0, n-1, nums);
+          return ;
+        }
+        for(int index = n-1; index > lowIndex; index--){
+          if(nums[lowIndex] < nums[index] ){
+            int temp = nums[index];
+            nums[index] = nums[lowIndex];
+            nums[lowIndex] = temp;
+            break;
+          }
+        }
+        reverseArray(lowIndex + 1, n-1, nums);
+    }
+    public void reverseArray(int start, int end, int[] array){
+      while(start < end){
+        int temp = array[start];
+        array[start] = array[end];
+        array[end] = temp;
+        start++;
+        end--;
+      }
+    }
+}
