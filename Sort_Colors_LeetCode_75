@@ -1,0 +1,15 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        //no extra space 
+        //library sort --> insertion sort + binary search.
+        // insertion sort
+        for(int i = 0; i < nums.length; i++){
+          while(i>0 && nums[i] < nums[i -1]){
+            int temp = nums[i];
+            nums[i] = nums[i -1];
+            nums[i -1] = temp;
+            i--;
+          }
+        }
+    }
+}
