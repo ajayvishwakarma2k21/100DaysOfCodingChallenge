@@ -1,0 +1,29 @@
+class Solution {
+    public void rotate(int[][] matrix) {
+        int n = matrix.length;
+        for(int i = 0; i< n ;i++){
+          for(int j = i; j < n; j++){
+                swap(i, j, matrix);
+          }
+        }
+        //reverse the row
+        for(int i = 0; i < n ;i++){
+          reverse(i, 0, n-1, matrix);
+        }
+    }
+    public void swap(int i, int j, int[][] matrix){
+      int temp = matrix[i][j];
+      matrix[i][j] = matrix[j][i];
+      matrix[j][i] = temp;
+    }
+
+    public void reverse(int row, int start, int end, int[][] matrix){
+      while(start < end){
+        int temp = matrix[row][start];
+        matrix[row][start] = matrix[row][end];
+        matrix[row][end] = temp;
+        start++;
+        end--;
+      }
+    }
+}
