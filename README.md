@@ -1,60 +1,86 @@
-# 💯 100 Days of Code Challenge
+<p align="center">
+  <img src="https://img.shields.io/badge/100DaysOfCode-%F0%9F%92%AF-blueviolet?style=for-the-badge" alt="100 Days of Code Badge"/>
+</p>
 
-Welcome to my **100 Days of Code** journey! 🚀  
-This repository documents my progress, learnings, and projects as I commit to coding every day for the next 100 days.
+<h1 align="center">💯 100 Days of Code Challenge</h1>
+
+<p align="center">
+  <b>Welcome to my 100 Days of Code journey!</b> 🚀<br>
+  <i>This repository documents my progress, learnings, and projects as I commit to coding every day for 100 days.</i>
+</p>
 
 ---
 
 ## 📅 Challenge Duration
-**Start Date:** [18/05/2025] 
+
+- **Start Date:** <b>18/05/2025</b>
 
 ---
 
-## 🧭 Goals
+## 🧭 My Mission
 
 ### 🎯 Primary Goals
-- Improve my **Data Structures & Algorithms** problem-solving skills (Java + LeetCode/GFG)
-- Build and deploy multiple projects using the **MERN Stack**
 
-### 🛠 Secondary Goals
-- Consistently share daily updates on [LinkedIn](https://linkedin.com/in/ajayvishwakarma2k21)
-- Write clean, maintainable, and efficient code
-- Learn version control, debugging, and deployment workflows
+- Sharpen my <b>Data Structures & Algorithms</b> skills (Java + LeetCode/GFG)
+- Build & deploy awesome projects using the <b>MERN Stack</b>
 
----
+### 🛠️ Secondary Goals
 
-## 📌 Daily Logs
-> ✅ *Daily logs will be updated throughout the challenge.*
+- Share daily progress on [LinkedIn](https://linkedin.com/in/ajayvishwakarma2k21)
+- Write clean, maintainable & efficient code
+- Master version control, debugging, and deployment workflows
 
 ---
 
-## 🛠 Tools & Platforms
+## 📖 Daily Logs
 
-- Programming Language: **Java**, **JavaScript**
-- DSA Practice: **LeetCode**, **GeeksforGeeks**
-- Frontend: **React**, **Tailwind CSS**
-- Backend: **Node.js**, **Express**
-- Database: **MongoDB**
-- Deployment: **Netlify**, **Render**, **Vercel**
-- Collaboration: **Git & GitHub**
+> ✍️ <i>Daily logs will be updated throughout the challenge. Stay tuned!</i>
+
+---
+
+## ⚙️ Tools & Platforms
+
+| 🔤 Purpose  | 🛠️ Tech / Platform         |
+| :---------: | :------------------------ |
+| Language    | Java, JavaScript          |
+| DSA         | LeetCode, GeeksforGeeks   |
+| Frontend    | React, Tailwind CSS       |
+| Backend     | Node.js, Express          |
+| Database    | MongoDB                   |
+| Deployment  | Netlify, Render, Vercel   |
+| Collaboration | Git & GitHub           |
 
 ---
 
 ## 📚 Resources
 
-- DSA [Striver's Sheet]
----
-
-## 🔗 Connect With Me
-
-- 💼 [LinkedIn](https://linkedin.com/in/ajayvishwakarma2k21)
-- 🧑‍💻 [GitHub](https://github.com/ajayvishwakarma2k21)
+- DSA: <b>Striver's Sheet</b>  
+- [More to be added as I discover them!]
 
 ---
 
-## 🙌 Support
+## 🌐 Connect With Me
 
-If you find this journey inspiring or helpful, feel free to star ⭐ the repo or reach out to collaborate or connect!
+<p>
+  <a href="https://linkedin.com/in/ajayvishwakarma2k21" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white&style=for-the-badge" alt="LinkedIn"/>
+  </a>
+  <a href="https://github.com/ajayvishwakarma2k21" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white&style=for-the-badge" alt="GitHub"/>
+  </a>
+</p>
 
-Let’s grow together 💻🔥  
+---
+
+## 🙌 Support & Collaboration
+
+If you find this journey inspiring or helpful, please ⭐ star the repo or reach out to collaborate!
+
+Let's grow together! 💻🔥  
 **#100DaysOfCode #DevJourney #DSA #MERNStack**
+
+---
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer"/>
+</p>
