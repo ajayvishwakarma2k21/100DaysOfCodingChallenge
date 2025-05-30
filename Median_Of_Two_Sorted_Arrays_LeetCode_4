@@ -1,0 +1,78 @@
+class Solution {
+    public double findMedianSortedArrays(int[] num1, int[] num2) {
+        int n1 = num1.length, n2 = num2.length;
+
+        // Ensure num1 is the smaller array to optimize binary search
+        if (n1 > n2) return findMedianSortedArrays(num2, num1);
+
+        int low = 0, high = n1;
+        // 'left' represents the count of elements that should be in the left half
+        // of the combined sorted array.
+        // For odd total length, it's the middle element's index.
+        // For even total length, it's the count of elements in the first half.
+        int left = (n1 + n2 + 1) / 2;
+
+        while (low <= high) {
+            // mid1 is the cut point in num1.
+            // It means 'mid1' elements are taken from num1 for the left partition.
+            int mid1 = (low + high) / 2; 
+            
+            // mid2 is the cut point in num2.
+            // It's derived to ensure the total 'left' elements are achieved.
+            int mid2 = left - mid1;
+
+            // Initialize boundary elements with extreme values to handle edge cases
+            // where a partition is at the beginning or end of an array.
+            int l1 = Integer.MIN_VALUE; // Max element in the left part of num1
+            int l2 = Integer.MIN_VALUE; // Max element in the left part of num2
+            int r1 = Integer.MAX_VALUE; // Min element in the right part of num1
+            int r2 = Integer.MAX_VALUE; // Min element in the right part of num2
+
+            // Populate l1, r1 based on mid1 and num1's length
+            if (mid1 < n1) { // If mid1 is not beyond the array bounds of num1
+                r1 = num1[mid1];
+            }
+            if (mid1 - 1 >= 0) { // If there are elements to the left of mid1 in num1
+                l1 = num1[mid1 - 1];
+            }
+
+            // Populate l2, r2 based on mid2 and num2's length
+            // **CORRECTION HERE: Use n2 for num2's length checks**
+            if (mid2 < n2) { // If mid2 is not beyond the array bounds of num2
+                r2 = num2[mid2];
+            }
+            if (mid2 - 1 >= 0) { // If there are elements to the left of mid2 in num2
+                l2 = num2[mid2 - 1];
+            }
+
+            // Check if the partition is valid
+            // A valid partition means:
+            // 1. Max of left part of num1 (l1) <= Min of right part of num2 (r2)
+            // 2. Max of left part of num2 (l2) <= Min of right part of num1 (r1)
+            if (l1 <= r2 && l2 <= r1) {
+                // If total length is odd, the median is the maximum of the left halves' last elements.
+                if ((n1 + n2) % 2 == 1) {
+                    return (double) Math.max(l1, l2);
+                } else {
+                    // If total length is even, the median is the average of the two middle elements.
+                    // These are the maximum of the left halves' last elements,
+                    // and the minimum of the right halves' first elements.
+                    return (double) (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0;
+                }
+            }
+            // Adjust binary search bounds if the partition is not valid
+            else if (l1 > r2) {
+                // If l1 is greater than r2, it means num1's left partition is too large.
+                // We need to move the cut in num1 to the left.
+                high = mid1 - 1;
+            } else { // l2 > r1
+                // If l2 is greater than r1, it means num2's left partition is too large,
+                // which implies num1's left partition is too small.
+                // We need to move the cut in num1 to the right.
+                low = mid1 + 1;
+            }
+        }
+        // This line should ideally not be reached if inputs are valid arrays.
+        return 0.0;
+    }
+}
