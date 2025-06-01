@@ -59,6 +59,17 @@
 
 ---
 
+## 🚀 Projects
+
+### CloudyBytes
+
+[🌐 Visit CloudyBytes!](https://cloudybytes.onrender.com/)
+
+CloudyBytes is a full-stack web application built using **React**, **Tailwind CSS**, **Express**, and **Node.js**. It’s deployed live on Render. The project demonstrates modern MERN-stack development practices, responsive design with Tailwind, and robust backend with Node/Express.  
+Check it out to see my work in action!
+
+---
+
 ## 🌐 Connect With Me
 
 <p>
