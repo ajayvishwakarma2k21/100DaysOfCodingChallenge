@@ -1,3 +1,13 @@
+steps and key learning -->
+1. sort the array
+2. take i, j and k and add ith, jth and kth element.
+3. skip the duplicate element;
+
+key things to be noticed --> 
+1. dont use new keyword in --> ans.add(Arrays.asList(...));
+2. use while( J < K && ...) for skiping...
+
+
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
