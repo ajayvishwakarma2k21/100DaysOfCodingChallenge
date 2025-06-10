@@ -1,0 +1,19 @@
+class Solution {
+    public int findPlatform(int[] Arrival, int[] Departure) {
+       //1. sort the arrays
+        Arrays.sort(Arrival);
+        Arrays.sort(Departure);
+        int i = 0, j = 0, count = 0, maxNeed = 0;
+        while(i < Arrival.length){
+            if(Arrival[i]<= Departure[j]){
+                count++;
+                i++;
+            }else{
+                count --;
+                j++;
+            }
+            maxNeed = Math.max(maxNeed, count);
+        }  
+        return maxNeed;
+    }
+}
