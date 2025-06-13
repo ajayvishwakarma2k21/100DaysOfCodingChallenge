@@ -1,0 +1,24 @@
+class Solution {
+    public int minimizeMax(int[] nums, int p) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        int low = -1, high = (int) 1e9 + 7;
+        while(low  < high - 1){
+          int mid = low + (high - low)/2;
+          int count = 0;
+
+          for(int i = 1; i < n; i++){
+            if(nums[i] - nums[i - 1] <= mid){
+              count ++;
+              i ++;
+            }
+          }
+          if(count >= p){
+            high = mid;
+          }else{
+            low = mid;
+          }
+        }
+        return high;
+    }
+}
