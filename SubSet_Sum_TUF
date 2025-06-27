@@ -1,0 +1,18 @@
+class Solution {
+    public List<Integer> subsetSums(int[] nums) {
+        List<Integer> ans = new ArrayList<>();
+        int n = nums.length;
+        int sum = 0;
+        int index = 0;
+        solve(nums, ans, n, index, sum);
+        return ans;
+    }
+    public void solve(int[] nums, List<Integer> ans, int n,int sum, int index){
+        if(index == n){
+            ans.add(sum);
+            return;
+        }
+        solve(nums, ans, n, sum + nums[index], index + 1 );
+        solve(nums, ans, n, sum, index + 1);
+    }
+}
