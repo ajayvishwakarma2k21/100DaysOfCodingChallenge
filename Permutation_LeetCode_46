@@ -1,0 +1,28 @@
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+      // all possible permutations --> n!; examp n = 3 then --> 3 * 2 * 1 = 6 (possible)
+        List<List<Integer>> ans = new ArrayList<>();
+        solve(0, nums, ans);
+        return ans;
+    }
+    public void solve(int index, int[] arr, List<List<Integer>> ans){
+      if(index==arr.length){
+        List<Integer> temp = new ArrayList<>();
+        for(int i : arr){
+          temp.add(i);
+        }
+        ans.add(new ArrayList<>(temp));
+        return;
+      }
+      for(int i = index; i < arr.length; i++){
+        swap(i, index, arr);
+        solve(index+ 1, arr, ans);
+        swap(i, index, arr);
+      }
+    }
+    public void swap(int i, int j, int[] nums){
+      int temp = nums[i];
+      nums[i] = nums[j];
+      nums[j] = temp;
+    }
+}
