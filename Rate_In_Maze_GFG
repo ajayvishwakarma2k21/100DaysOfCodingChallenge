@@ -1,0 +1,28 @@
+class Solution {
+    // Function to find all possible paths
+    public ArrayList<String> ratInMaze(int[][] maze) {
+       ArrayList<String> ans =  new ArrayList<>();
+       int n = maze.length;
+       if(maze[0][0] != 0 && maze[n-1][n-1] != 0){
+           findPath(maze, n, 0, 0, "", ans);
+       }
+       return ans;
+    }
+    
+    private void findPath(int[][] maze, int n, int row, int col, String path, ArrayList<String> res){
+        if(row==n-1 && col==n-1){
+            res.add(path);
+            return ;
+        }
+        if(row <0 || col < 0 || row >= n || col >= n || maze[row][col] == 0){
+            return ;
+        }
+        
+        maze[row][col] = 0;
+        findPath(maze, n, row + 1, col, path +"D", res);
+        findPath(maze, n, row, col - 1, path + "L", res);
+        findPath(maze, n, row, col + 1, path + "R", res);
+        findPath(maze, n, row - 1, col, path + "U", res);
+        maze[row][col] = 1;
+    }
+}
