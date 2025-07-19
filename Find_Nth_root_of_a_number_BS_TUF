@@ -1,0 +1,25 @@
+class Solution {
+    public int NthRoot(int N, int M) {
+        int i = 1, j = M;
+
+        while(i <= j){
+            int mid = (i + j)/2;
+            int x = solve(mid, N); 
+            if(x == M){
+                return mid;
+            }else if(x > M){
+                j = mid - 1;
+            }else{
+                i = mid + 1;
+            }
+        }
+        return -1;
+    }
+    public int solve(int mid, int n){
+        int ans = 1;
+        for(int i = 0; i< n; i++){
+            ans = ans * mid;
+        }
+        return ans;
+    }
+}
