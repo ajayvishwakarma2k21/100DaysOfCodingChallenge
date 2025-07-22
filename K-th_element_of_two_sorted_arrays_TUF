@@ -1,0 +1,15 @@
+class Solution {
+    public int kthElement(int[] a, int[] b, int k) {
+      int i = 0 , j = 0, ans = 0;
+      while( k >0){
+        if(a[i]<b[j]){
+            ans = a[i++];
+            k--;
+        }else{
+            ans = b[j++];
+            k--;
+        }
+      }
+      return ans;
+    }
+}
