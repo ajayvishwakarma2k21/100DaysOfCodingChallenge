@@ -1,0 +1,30 @@
+class Solution {
+    public int myAtoi(String s) {
+        // Edge case
+        if (s == null || s.length() == 0) return 0;
+
+        // 1. Remove whitespaces
+        s = s.trim();
+        if (s.length() == 0) return 0;
+
+        int i = 0;
+        int sign = 1;
+        long ans = 0;
+
+        // 2. Handle sign if present
+        if (i < s.length() && (s.charAt(i) == '+' || s.charAt(i) == '-')) {
+            sign = (s.charAt(i) == '-') ? -1 : 1;
+            i++;
+        }
+
+        // 3. Convert digits & handle overflow
+        while (i < s.length() && Character.isDigit(s.charAt(i))) {
+            ans = ans * 10 + (s.charAt(i) - '0');
+            if (sign == 1 && ans > Integer.MAX_VALUE) return Integer.MAX_VALUE;
+            if (sign == -1 && -ans < Integer.MIN_VALUE) return Integer.MIN_VALUE;
+            i++;
+        }
+
+        return (int) ans * sign;
+    }
+}
