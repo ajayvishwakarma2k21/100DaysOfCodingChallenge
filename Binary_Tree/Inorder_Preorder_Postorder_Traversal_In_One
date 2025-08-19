@@ -1,0 +1,66 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int data;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int val) { data = val; left = null, right = null }
+ * }
+ **/
+class Pair<K, V>{
+    K node;
+    V value;
+    Pair(K node, V value){
+        this.node = node;
+        this.value = value;
+    }
+    public K getKey(){
+        return node;
+    }
+    public V getValue(){
+        return value;
+    }
+    public void setValue(V val){
+        value = val;
+    }
+}
+class Solution {
+    List<List<Integer>> treeTraversal(TreeNode root) {
+       List<Integer> pre = new ArrayList<>();
+       List<Integer> in = new ArrayList<>();
+       List<Integer> post = new ArrayList<>();
+       // base case 
+       if(root == null)return new ArrayList<>();
+       Stack<Pair<TreeNode, Integer>> st = new Stack<>();
+
+       st.push(new Pair<>(root, 1));
+       while(!st.isEmpty()){
+        Pair<TreeNode, Integer> p = st.pop();
+        if(p.getValue() == 1){
+            pre.add(p.getKey().data);
+
+            p.setValue(2);
+            st.push(p);
+
+            if(p.getKey().left != null){
+                st.push(new Pair<>(p.getKey().left, 1));
+            }
+        }else if(p.getValue() == 2){
+            in.add(p.getKey().data);
+            p.setValue(3);
+            st.push(p);
+            if(p.getKey().right != null){
+                st.push(new Pair<>(p.getKey().right, 1));
+            }
+        }else{
+            post.add(p.getKey().data);
+        }
+       }
+       List<List<Integer>> ans = new ArrayList<>();
+       
+       ans.add(in);
+       ans.add(pre);
+       ans.add(post);
+       return ans;
+    }
+}
