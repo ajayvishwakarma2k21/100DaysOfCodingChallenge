@@ -1,0 +1,42 @@
+class Solution {
+    public int knapsack01(int[] wt, int[] val, int n, int W) {
+            int[][] dp = new int[n][W + 1];
+            for(int i = 0; i< n; i++){
+                Arrays.fill(dp[i], -1);
+            }
+
+            return solve(wt, val, n - 1, W, dp);
+
+    }
+    private int solve(int[] wt, int[] val, int len, int W, int[][] dp){
+        //base case 
+        if(len == 0){
+            if(wt[0] <= W){
+                return val[0];
+            }else{
+                return 0;
+            }
+        }
+        // checkpoints
+        // already calculate subproblem.
+        if(dp[len][W] != -1)return dp[len][W];
+
+        // if value not taken then --> wo go next element 
+        int notTaken = 0 + solve(wt, val, len -1 , W, dp);
+
+        // now taken
+        int taken = Integer.MIN_VALUE;
+
+        if(wt[len] <= W){
+            taken = val[len] + solve(wt, val, len -1, W - wt[len], dp); 
+        }
+        dp[len][W] = Math.max(taken, notTaken);
+
+        return dp[len][W];
+
+    }
+}
+
+
+
+
