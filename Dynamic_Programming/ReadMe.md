@@ -1,3 +1,11 @@
+# We make DP array of size n+1:
+
+- To represent base cases (like 0 items, 0 steps, or empty string).
+- To align with 1-based indexing.
+- To make transition formulas cleaner (no special handling for boundaries).
+- To avoid index out of range errors.
+
+---
 # 📘 Dynamic Programming: 1D vs 2D DP
 
 ## 🔹 General Rule
